@@ -49,7 +49,7 @@ add_action( 'plugins_loaded', array( 'Add_Post_Type_Instructions', 'get_instance
  * Custom action to let other plugins start after this one is loaded
  *
  */
-do_action( 'APTI_loaded', plugin_dir_path( __FILE__ ) );
+//do_action( 'APTI_loaded', plugin_dir_path( __FILE__ ) );
 
 /**
  * Load translations
@@ -57,7 +57,7 @@ do_action( 'APTI_loaded', plugin_dir_path( __FILE__ ) );
 function apti_load_textdomain() {
 	load_plugin_textdomain( 'apti', false, dirname(plugin_basename(__FILE__)) . '/languages/' );
 }
-add_action( 'init', 'apti_load_textdomain', 1 );
+//add_action( 'init', 'apti_load_textdomain', 1 );
 
 /*----------------------------------------------------------------------------*
  * Dashboard and Administrative Functionality
