@@ -194,7 +194,7 @@ class Add_Post_Type_Instructions_Admin {
 	 */
 	public function is_edit_page($new_edit = null){
 
-	    global $current_screen;  // Makes the $current_screen object available           
+	    global $current_screen;  // Makes the $current_screen object available
 		if ($current_screen && ($current_screen->base == "edit" || $current_screen->base == "post")) {
 
 			wp_enqueue_style('apti-style', plugins_url( '/css/apti.css', __FILE__ ) );
@@ -213,10 +213,10 @@ class Add_Post_Type_Instructions_Admin {
 		$post_type = $this->get_post_type();
 		$options = get_option( $this->plugin_slug . '_' . $post_type );
 
-		if ( isset( $options['enable_check'] ) && ! empty( $options['enable_check'] ) ) {	
+		if ( isset( $options['enable_check'] ) && ! empty( $options['enable_check'] ) ) {
 
 			if ( isset( $options['top_check'] ) && ! empty( $options['top_check'] ) ) {
-				if ( isset( $options['top'] ) && ! empty( $options['top'] ) ) { 
+				if ( isset( $options['top'] ) && ! empty( $options['top'] ) ) {
 					$top = $options['top'];
 					echo '<div id="apti-above-title">' . $top . '</div>';
 				}
@@ -263,7 +263,7 @@ class Add_Post_Type_Instructions_Admin {
 		if ( isset( $options['enable_check'] ) && ! empty( $options['enable_check'] ) ) {
 
 			if ( isset( $options['publish_check'] ) && ! empty( $options['publish_check'] ) ) {
-				if ( isset( $options['publish'] ) && ! empty( $options['publish'] ) ) { 
+				if ( isset( $options['publish'] ) && ! empty( $options['publish'] ) ) {
 					$publish = '<p class="apti-text apti-publish">' . $options['publish'] . '</p>'; ?>
 
 					<script type="text/javascript">
@@ -273,7 +273,7 @@ class Add_Post_Type_Instructions_Admin {
 						    $('' + text_to_insert + '').insertBefore('#submitdiv .inside #minor-publishing-actions')
 						});
 					</script>
-				<?php 
+				<?php
 				}
 			}
 
@@ -294,7 +294,7 @@ class Add_Post_Type_Instructions_Admin {
 		if ( isset( $options['enable_check'] ) && ! empty( $options['enable_check'] ) ) {
 
 			if ( isset( $options['author_check'] ) && ! empty( $options['author_check'] ) ) {
-				if ( isset( $options['author'] ) && ! empty( $options['author'] ) ) { 
+				if ( isset( $options['author'] ) && ! empty( $options['author'] ) ) {
 					$author = '<p class="apti-text apti-author">' . $options['author'] . '</p>'; ?>
 
 					<script type="text/javascript">
@@ -304,7 +304,7 @@ class Add_Post_Type_Instructions_Admin {
 						    $('' + text_to_insert + '').insertBefore('#authordiv .inside select')
 						});
 					</script>
-				<?php 
+				<?php
 				}
 			}
 
@@ -337,36 +337,7 @@ class Add_Post_Type_Instructions_Admin {
 
 	} // end change_thumbnail_metabox_content
 
-	/**
-	 * Change excerpt metabox content
-	 *
-	 * @since 1.0.2
-	 */
-	public function change_excerpt_metabox_content() {
 
-		$post_type = $this->get_post_type();
-		$options = get_option( $this->plugin_slug . '_' . $post_type );
-
-		if ( isset( $options['enable_check'] ) && ! empty( $options['enable_check'] ) ) {
-
-			if ( isset( $options['excerpt_check'] ) && ! empty( $options['excerpt_check'] ) ) {
-				if ( isset( $options['excerpt'] ) && ! empty( $options['excerpt'] ) ) { 
-					$excerpt = '<p class="apti-text apti-excerpt">' . $options['excerpt'] . '</p>'; ?>
-
-					<script type="text/javascript">
-						jQuery(function($) {
-						    var text_to_insert = '<?php echo $excerpt; ?>';
-
-						    $('' + text_to_insert + '').insertBefore('#postexcerpt .inside label')
-						});
-					</script>
-				<?php 
-				}
-			}
-
-		}
-
-	} // end change_excerpt_metabox_content
 
 	/**
 	 * Change trackbacks metabox content
@@ -381,7 +352,7 @@ class Add_Post_Type_Instructions_Admin {
 		if ( isset( $options['enable_check'] ) && ! empty( $options['enable_check'] ) ) {
 
 			if ( isset( $options['trackbacks_check'] ) && ! empty( $options['trackbacks_check'] ) ) {
-				if ( isset( $options['trackbacks'] ) && ! empty( $options['trackbacks'] ) ) { 
+				if ( isset( $options['trackbacks'] ) && ! empty( $options['trackbacks'] ) ) {
 					$trackbacks = '<p class="apti-text apti-trackbacks">' . $options['trackbacks'] . '</p>'; ?>
 
 					<script type="text/javascript">
@@ -391,7 +362,7 @@ class Add_Post_Type_Instructions_Admin {
 						    $('' + text_to_insert + '').insertBefore('#trackbacksdiv .inside p:nth-of-type(1)')
 						});
 					</script>
-				<?php 
+				<?php
 				}
 			}
 
@@ -412,7 +383,7 @@ class Add_Post_Type_Instructions_Admin {
 		if ( isset( $options['enable_check'] ) && ! empty( $options['enable_check'] ) ) {
 
 			if ( isset( $options['customfields_check'] ) && ! empty( $options['customfields_check'] ) ) {
-				if ( isset( $options['customfields'] ) && ! empty( $options['customfields'] ) ) { 
+				if ( isset( $options['customfields'] ) && ! empty( $options['customfields'] ) ) {
 					$customfields = '<p class="apti-text apti-customfields">' . $options['customfields'] . '</p>'; ?>
 
 					<script type="text/javascript">
@@ -422,7 +393,7 @@ class Add_Post_Type_Instructions_Admin {
 						    $('' + text_to_insert + '').insertBefore('#postcustom .inside #postcustomstuff')
 						});
 					</script>
-				<?php 
+				<?php
 				}
 			}
 
@@ -443,7 +414,7 @@ class Add_Post_Type_Instructions_Admin {
 		if ( isset( $options['enable_check'] ) && ! empty( $options['enable_check'] ) ) {
 
 			if ( isset( $options['comments_check'] ) && ! empty( $options['comments_check'] ) ) {
-				if ( isset( $options['comments'] ) && ! empty( $options['comments'] ) ) { 
+				if ( isset( $options['comments'] ) && ! empty( $options['comments'] ) ) {
 					$comments = '<p class="apti-text apti-comments">' . $options['comments'] . '</p>'; ?>
 
 					<script type="text/javascript">
@@ -453,13 +424,13 @@ class Add_Post_Type_Instructions_Admin {
 						    $('' + text_to_insert + '').insertBefore('#commentsdiv .inside p:nth-of-type(1)')
 						});
 					</script>
-				<?php 
+				<?php
 				}
 			}
 
 		}
 
-	} // end change_comments_metabox_content	
+	} // end change_comments_metabox_content
 
 	/**
 	 * Change discussion metabox content
@@ -474,7 +445,7 @@ class Add_Post_Type_Instructions_Admin {
 		if ( isset( $options['enable_check'] ) && ! empty( $options['enable_check'] ) ) {
 
 			if ( isset( $options['discussion_check'] ) && ! empty( $options['discussion_check'] ) ) {
-				if ( isset( $options['discussion'] ) && ! empty( $options['discussion'] ) ) { 
+				if ( isset( $options['discussion'] ) && ! empty( $options['discussion'] ) ) {
 					$discussion = '<p class="apti-text apti-discussion">' . $options['discussion'] . '</p>'; ?>
 
 					<script type="text/javascript">
@@ -484,13 +455,13 @@ class Add_Post_Type_Instructions_Admin {
 						    $('' + text_to_insert + '').insertBefore('#commentstatusdiv .inside p:nth-of-type(1)')
 						});
 					</script>
-				<?php 
+				<?php
 				}
 			}
 
 		}
 
-	} // end change_discussion_metabox_content	
+	} // end change_discussion_metabox_content
 
 	/**
 	 * Change revisions metabox content
@@ -505,7 +476,7 @@ class Add_Post_Type_Instructions_Admin {
 		if ( isset( $options['enable_check'] ) && ! empty( $options['enable_check'] ) ) {
 
 			if ( isset( $options['revisions_check'] ) && ! empty( $options['revisions_check'] ) ) {
-				if ( isset( $options['revisions'] ) && ! empty( $options['revisions'] ) ) { 
+				if ( isset( $options['revisions'] ) && ! empty( $options['revisions'] ) ) {
 					$revisions = '<p class="apti-text apti-revisions">' . $options['revisions'] . '</p>'; ?>
 
 					<script type="text/javascript">
@@ -515,7 +486,7 @@ class Add_Post_Type_Instructions_Admin {
 						    $('' + text_to_insert + '').insertBefore('#revisionsdiv .inside ul:nth-of-type(1)')
 						});
 					</script>
-				<?php 
+				<?php
 				}
 			}
 
@@ -536,7 +507,7 @@ class Add_Post_Type_Instructions_Admin {
 		if ( isset( $options['enable_check'] ) && ! empty( $options['enable_check'] ) ) {
 
 			if ( isset( $options['pageattributes_check'] ) && ! empty( $options['pageattributes_check'] ) ) {
-				if ( isset( $options['pageattributes'] ) && ! empty( $options['pageattributes'] ) ) { 
+				if ( isset( $options['pageattributes'] ) && ! empty( $options['pageattributes'] ) ) {
 					$pageattributes = '<p class="apti-text apti-pageattributes">' . $options['pageattributes'] . '</p>'; ?>
 
 					<script type="text/javascript">
@@ -546,7 +517,7 @@ class Add_Post_Type_Instructions_Admin {
 						    $('' + text_to_insert + '').insertBefore('#pageparentdiv .inside p:nth-of-type(1)')
 						});
 					</script>
-					<?php 
+					<?php
 				}
 			}
 
@@ -567,7 +538,7 @@ class Add_Post_Type_Instructions_Admin {
 		if ( isset( $options['enable_check'] ) && ! empty( $options['enable_check'] ) ) {
 
 			if ( isset( $options['categories_check'] ) && ! empty( $options['categories_check'] ) ) {
-				if ( isset( $options['categories'] ) && ! empty( $options['categories'] ) ) { 
+				if ( isset( $options['categories'] ) && ! empty( $options['categories'] ) ) {
 					$categories = '<p class="apti-text apti-categories">' . $options['categories'] . '</p>'; ?>
 
 					<script type="text/javascript">
@@ -577,13 +548,13 @@ class Add_Post_Type_Instructions_Admin {
 						    $('' + text_to_insert + '').insertBefore('#taxonomy-category')
 						});
 					</script>
-					<?php 
+					<?php
 				}
 			}
 
 		}
 
-	} // end change_categories_metabox_content	
+	} // end change_categories_metabox_content
 
 	/**
 	 * Change tags metabox content
@@ -598,7 +569,7 @@ class Add_Post_Type_Instructions_Admin {
 		if ( isset( $options['enable_check'] ) && ! empty( $options['enable_check'] ) ) {
 
 			if ( isset( $options['tags_check'] ) && ! empty( $options['tags_check'] ) ) {
-				if ( isset( $options['tags'] ) && ! empty( $options['tags'] ) ) { 
+				if ( isset( $options['tags'] ) && ! empty( $options['tags'] ) ) {
 					$tags = '<p class="apti-text apti-tags">' . $options['tags'] . '</p>'; ?>
 
 					<script type="text/javascript">
@@ -608,14 +579,14 @@ class Add_Post_Type_Instructions_Admin {
 						    $('' + text_to_insert + '').insertBefore('#tagsdiv-post_tag .tagsdiv')
 						});
 					</script>
-					<?php 
+					<?php
 				}
 			}
 
 		}
 
-	} // end change_categories_metabox_content	
-    
+	} // end change_categories_metabox_content
+
     /**
 	 * Change custom categories metabox content
 	 *
@@ -625,11 +596,11 @@ class Add_Post_Type_Instructions_Admin {
 
 		$post_type = $this->get_post_type();
 		$options = get_option( $this->plugin_slug . '_' . $post_type );
-        
+
         $argums = array(
 			    'public'   => true,
 			    '_builtin' => false
-			); 
+			);
         $outputs = 'names'; // or objects
         $operators = 'and'; // 'and' or 'or'
         $taxonomy_names = get_taxonomies( $argums, $outputs, $operators );
@@ -639,10 +610,10 @@ class Add_Post_Type_Instructions_Admin {
               'name' => $tn
             );
             $thingoutputs = 'objects'; // or names
-            $things = get_taxonomies( $thingargums, $thingoutputs ); 
+            $things = get_taxonomies( $thingargums, $thingoutputs );
 
             foreach ($things as $thing ) {
-                    
+
                 if ( is_object_in_taxonomy( $post_type, $tn ) ) {
                     if ( is_taxonomy_hierarchical( $tn ) ) {
 
@@ -664,12 +635,12 @@ class Add_Post_Type_Instructions_Admin {
                             <?php }
                         }
                     }
-                }   
-                
+                }
+
             }
         }
 	} // end change_custom_categories_metabox_content
-    
+
     /**
 	 * Change custom tags metabox content
 	 *
@@ -679,11 +650,11 @@ class Add_Post_Type_Instructions_Admin {
 
 		$post_type = $this->get_post_type();
 		$options = get_option( $this->plugin_slug . '_' . $post_type );
-        
+
         $argums = array(
 			    'public'   => true,
 			    '_builtin' => false
-			); 
+			);
         $outputs = 'names'; // or objects
         $operators = 'and'; // 'and' or 'or'
         $taxonomy_names = get_taxonomies( $argums, $outputs, $operators );
@@ -693,10 +664,10 @@ class Add_Post_Type_Instructions_Admin {
               'name' => $tn
             );
             $thingoutputs = 'objects'; // or names
-            $things = get_taxonomies( $thingargums, $thingoutputs ); 
+            $things = get_taxonomies( $thingargums, $thingoutputs );
 
             foreach ($things as $thing ) {
-                    
+
                 if ( is_object_in_taxonomy( $post_type, $tn ) ) {
                     if ( !is_taxonomy_hierarchical( $tn ) ) {
 
@@ -718,8 +689,8 @@ class Add_Post_Type_Instructions_Admin {
                             <?php }
                         }
                     }
-                }   
-                
+                }
+
             }
         }
 	} // end change_custom_categories_metabox_content
@@ -737,7 +708,7 @@ class Add_Post_Type_Instructions_Admin {
 		if ( isset( $options['enable_check'] ) && ! empty( $options['enable_check'] ) ) {
 
 			if ( isset( $options['postformats_check'] ) && ! empty( $options['postformats_check'] ) ) {
-				if ( isset( $options['postformats'] ) && ! empty( $options['postformats'] ) ) { 
+				if ( isset( $options['postformats'] ) && ! empty( $options['postformats'] ) ) {
 					$postformats = '<p class="apti-text apti-postformats">' . $options['postformats'] . '</p>'; ?>
 
 					<script type="text/javascript">
@@ -747,7 +718,7 @@ class Add_Post_Type_Instructions_Admin {
 						    $('' + text_to_insert + '').insertBefore('#post-formats-select')
 						});
 					</script>
-				<?php 
+				<?php
 				}
 			}
 
@@ -768,7 +739,7 @@ class Add_Post_Type_Instructions_Admin {
 		if ( isset( $options['enable_check'] ) && ! empty( $options['enable_check'] ) ) {
 
 			if ( isset( $options['slug_check'] ) && ! empty( $options['slug_check'] ) ) {
-				if ( isset( $options['slug'] ) && ! empty( $options['slug'] ) ) { 
+				if ( isset( $options['slug'] ) && ! empty( $options['slug'] ) ) {
 					$slug = '<p class="apti-text apti-slug">' . $options['slug'] . '</p>'; ?>
 
 					<script type="text/javascript">
@@ -778,12 +749,12 @@ class Add_Post_Type_Instructions_Admin {
 						    $('' + text_to_insert + '').insertBefore('#slugdiv .inside label')
 						});
 					</script>
-				<?php 
+				<?php
 				}
 			}
 
 		}
 
-	} // end change_slug_metabox_content	
+	} // end change_slug_metabox_content
 
 }
