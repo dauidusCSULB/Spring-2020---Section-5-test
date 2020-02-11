@@ -1,1 +1,2 @@
 this is a test file uploaded after all changes were made
+This is a lone from Dave.  Foo!
